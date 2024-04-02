@@ -82,11 +82,11 @@ jobs:
 
     - name: Pack
       working-directory: instdir
-      run: cmake -E tar cJfv ../${{ matrix.config.artifact }} .
+      run: cmake -E tar cJfv ../${{ matrix.artifact }} .
 
     - name: Upload
       uses: actions/upload-artifact@v4.3.1
       with:
-        name: ${{ matrix.config.artifact }}
-        path: ./${{ matrix.config.artifact }}
+        name: ${{ matrix.artifact }}
+        path: ./${{ matrix.artifact }}
         
